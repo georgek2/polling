@@ -1,0 +1,59 @@
+{% extends 'polls/ll_index.html' %}
+
+
+{% block landing %}
+<!-- Login Landing Section -->
+<section id="landing">
+    <div id="land-wrapper">
+        <h1>Fun Surveys with Rewards are Awaiting You!! </h1>
+
+        <form method='POST' action="{% url 'register' %}">
+            {% csrf_token %}
+
+            {% if messages %}
+                {% for message in messages %}
+                <p class="register_msg"> {{ message }}</p>
+
+                {% endfor %}
+
+            {% endif %}
+            <span class='field'>
+                <label>username</label>
+                <div class='input'>{{ form.username }}</div>
+            </span>
+
+            <span class='field'>
+                <label>password</label>
+                <div class='input'>{{ form.password1 }}</div>
+            </span>
+
+            <span class='field'>
+                <label>password confirmation</label>
+                <div class='input'>{{ form.password2 }}</div>
+            </span>
+
+            <span class='field'>
+                <input type='submit'>
+            </span>
+
+        </form>
+
+        <p id="landing-p">Already a member? <a href="{% url 'login' %}">Get Rewarded</a></p>
+        
+    </div>
+</section>
+{% endblock landing %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

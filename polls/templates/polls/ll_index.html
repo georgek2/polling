@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling App </title>
+
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+
+    
+    <!-- Header -->
+    <header>
+        <nav>
+            <div id="logo">
+                <p><a href="{% url 'home' %}"><i>SurveyMaster</i></a></p>
+            </div>
+            <ul id="navigation">
+                <li><a href="#">Surveys</a></li>
+                <li><a href="#">Results</a></li>
+            </ul>
+            <div id="hamburger">
+                <div class="bar"></div >
+                <div class="bar"></div >
+                <div class="bar"></div >
+            </div>
+        </nav>
+ 
+    </header>
+
+    <!-- Main Body -->
+    <main>
+
+        {% block landing %}
+        <!-- Landing Section -->
+        <section id="landing">
+            <div id="land-wrapper">
+                <h1>Login or Register to Post a Survey or Take One!! </h1>
+                <p id="landing-p">Are you new here? 
+                    <a sr="{% url 'register' %}">Join the Club</a>
+                </p>
+                
+            </div>
+        </section>
+        {% endblock landing %}
+
+
+        {% block surveys %}
+
+        {% endblock surveys %}
+
+        <div id="svy-img">
+            <img src="{% static 'images/rockets.jpg' %}" alt="">
+        </div>
+
+
+        {% block footer %}
+
+        <footer>
+            <p id="footer">Thank You!</p>
+        </footer>
+        {% endblock footer %}
+
+
+    </main>
+    
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

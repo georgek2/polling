@@ -1,0 +1,33 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+
+{% block surveys %}
+<section id="surveys">
+    <div class="surveys-header">
+        <h2>Available Surveys</h2>
+    </div>
+    {% for survey in surveys %}
+
+        <div class="survey">
+            <P id="survey-title">
+                <a href="{% url 'survey' survey.id %}">{{ survey.title }}</a>
+            </P>
+            <P id="survey-owner">
+                > {{ survey.owner }}
+            </P>
+            <P id="survey-desc">
+                {{ survey.desc }}
+            </P>
+        </div>
+
+    {% endfor %}
+</section>
+
+<div id="svy-img">
+    <img src="{% static 'images/rockets.jpg' %}" alt="">
+</div>
+
+{% endblock surveys %}
+
+
+

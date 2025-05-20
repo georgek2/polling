@@ -1,0 +1,77 @@
+{% extends 'polls/ll_index.html' %}
+
+{% load static %}
+
+
+
+{% block landing %}
+<!-- Login Landing Section -->
+<section id="landing">
+    <div id="land-wrapper">
+        <h1>Please Login. Take a Survey. Get Rewarded!! </h1>
+
+        <form method='POST' action="{% url 'login' %}">
+            {% csrf_token %}
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="register_msg">{{ message }}</p>
+                    
+                {% endfor %}
+
+            {% endif %}
+            <span class='field'>
+                <label>username</label>
+                <div class='input'>{{ form.username }}</div>
+            </span>
+
+            <span class='field'>
+                <label>password</label>
+                <div class='input'>{{ form.password }}</div>
+            </span>
+
+            <span class='field'>
+                <input type='submit' value='login'>
+            </span>
+        </form>
+
+        <p>Forgot password? <a href="{% url 'password reset' %}">Reset password</a></p>
+        
+        <p id="landing-p">Are you new here? <a href="{% url 'register' %}">Join the Club</a></p>
+        
+    </div>
+</section>
+{% endblock landing %}
+
+
+{% block surveys %}
+<section id="surveys">
+    <div class="surveys-header">
+        <h2>Available Surveys</h2>
+    </div>
+    {% for survey in surveys %}
+
+        <div class="survey">
+            <P id="survey-title">
+                <a href="{% url 'survey' survey.id %}">{{ survey.title }}</a>
+            </P>
+            <P id="survey-owner">
+                > {{ survey.owner }}
+            </P>
+            <P id="survey-desc">
+                {{ survey.desc }}
+            </P>
+        </div>
+
+    {% endfor %}
+</section>
+
+
+{% endblock surveys %}
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+
+{% extends 'polls/base.html' %}
+
+{% load static %}
+
+{% block landing %}
+
+<section id="survey">
+    <div class="survey-landing">
+        <h1>{{ survey.title }}</h1>
+        <p id="owner"><b>By: </b>{{ survey.owner }}</p>
+        <p id="purpose">{{ survey.purpose }}</p>
+    </div>
+    <div id="survey-img">
+        <img src="{% static 'images/ds.jfif' %}" alt="No Img">
+    </div>
+    <div id="survey-qns">
+
+    </div>
+</section>
+
+{% endblock landing %}
+
+

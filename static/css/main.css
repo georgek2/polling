@@ -1,0 +1,341 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;  
+}
+
+
+header{
+    background-color: rgb(160, 50, 194);
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{            
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+}
+nav #logo{
+    font-size: 22px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    margin-right: 10px;
+    font-size: 18px;
+}
+nav a{
+    color: rgb(255, 252, 252);
+    text-decoration: none;
+}
+
+
+main a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+#profile{
+    display: flex;
+}
+
+
+/* Hamburger Menu */
+#hamburger div{
+    background-color: rgb(253, 253, 253);
+    display: block;
+    height: 3px; 
+    width: 25px;
+    margin: 5px auto;
+    transition: all .4s ease-in-out;
+}
+#hamburger span:nth-child(2){
+    margin:4px 0px;
+}
+
+#hamburger{
+    display: none;
+}
+
+
+
+/* Responsive hamburger menu */
+@media screen and (max-width: 500px){
+    #hamburger{
+        display: block;
+    }
+    #hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(-45deg);
+    }
+
+    #hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(45deg);
+    }
+
+    #navigation{
+        display: none;
+    }
+    
+    #navigation.active{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        top: 40px;
+        height: 140px;
+        left: 40%;
+        transform: translateX(50%);
+        width: 35%; /* Adjust the width as needed */
+        background-color: rgb(160, 50, 194);
+        padding: 10px;
+    }
+    nav #navigation.active a{
+        transition: all.4s ease-in-out;
+    }
+
+    #navigation.active li{
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 4%;
+    }
+    
+    
+}
+
+
+
+main h1{
+    font-size: 48px;
+}
+main #landing-p{
+    font-size: 32px;
+}
+
+h3{
+    text-align: center;
+    margin: 20px auto;
+    font-size:24px;
+}
+
+/* Industry Section */
+#industry{
+    display: flex;
+    justify-content: center;
+}
+
+#industry li a{
+    border: 2px solid rgb(192, 147, 206);
+    border-radius: 7.6px;
+    padding: 4px 6px;
+    margin: 10px 6px;
+}
+
+#industry a:hover{
+    background-color: rgb(146, 88, 201);
+    color: white;
+}
+
+
+#landing{
+    background-color: rgb(192, 147, 206);
+    height: 40%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+#land-wrapper{
+    width: 900px;
+    margin: auto;
+    padding: 4% 0 8%;
+}
+#land-wrapper p{
+    margin-top: 4%;
+}
+
+#landing button{
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+#landing .btns{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#landing a{
+    color: rgb(245, 235, 235);
+    width: 100%;
+    height: auto;
+}
+
+#landing .btn p{
+    font-size: 20px;
+    margin: 0 20px;
+    color: black;
+}
+
+#login{
+    margin-right: 20px;
+    margin-bottom: 4px;
+    background-color: rgb(248, 243, 250);
+    border: 2px solid rgb(135, 42, 168);
+}
+
+#register{
+    margin-right: 20px;
+    border: 2px solid rgb(125, 22, 156);
+    background-color: rgb(192, 147, 206);
+    
+}
+
+
+#landing button:hover{
+    background-color: rgb(152, 80, 173);
+}
+
+#landing .btns a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+/* Login register form */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6% auto;
+}
+
+form label{
+    display: flex;
+    font-size: 24px;
+}
+form span{
+    width: 50%;
+    margin: 8px 0;
+}
+
+form span input{
+    height: 24px;
+    width: 100%;
+}
+
+
+
+/* Surveys section */
+
+#surveys{
+    width: 70%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border: 2px solid rgb(192, 147, 206);
+    border-radius: 5px;
+}
+
+.surveys-header{
+    text-align: center;
+    padding: 14px 0px;
+}
+
+.survey{
+    width: 90%;
+    margin: auto;
+}
+
+.survey p{
+    padding-left: 2%;
+}
+
+#survey-title{
+    font-size: larger;
+    padding-bottom: 6px;
+}
+
+#survey-owner{
+    padding-bottom: 8px;
+}
+#survey-desc{
+    padding-bottom: 5%;
+}
+
+#survey{
+    height: 100%;
+}
+.survey-landing{
+    width: 70%;
+    margin:24px auto 3%;
+}
+#owner{
+    font-size: larger;
+    margin: 14px 0% 24px;
+}
+
+#purpose{
+    font-size: 23px;
+}
+
+
+#svy-img img{
+    max-width: 100%;
+}
+    
+
+#survey-img{
+    display: flex;
+    width: 100%;
+}
+
+#survey-img img{
+    width: 80%;
+    margin: auto;
+}
+
+#contact{
+    height: 300px;
+    background-color: rgb(192, 147, 206);
+}
+
+#contact h2{
+    text-align: center;
+    margin-top: 3%;
+    padding-top: 3%;
+}
+
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;  
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+
+#footer{
+    background-color: rgb(160, 50, 194);
+    color: white;
+    text-align: center;
+    padding: 8px 0px;
+    margin-bottom: 0%;
+}
+
